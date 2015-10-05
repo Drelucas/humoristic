@@ -1,0 +1,16 @@
+Metrics/LineLength:
+  Max: 180
+
+Style/Documentation:
+  Enabled: false
+
+AllCops:
+  RunRailsCops: true
+  Exclude:
+    - 'bin/**/*'
+    - 'db/schema.rb'
+    - 'db/migrate/*'
+
+Style/AlignHash:
+  EnforcedHashRocketStyle: table
+  EnforcedColonStyle: table
