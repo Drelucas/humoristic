@@ -25,6 +25,12 @@ CommitMsg:
     enabled: false
 
 PreCommit:
+  ALL:
+    problem_on_unmodified_line: warn
+    requires_files: true
+    required: false
+    quiet: false
+
   BundleCheck: # Check if local Gemfile.lock matches Gemfile when either changes, unless Gemfile.lock is ignored by git.
     enabled: true
 
@@ -59,10 +65,15 @@ PreCommit:
   JsonSyntax: # Checks the syntax of any modified JSON files.
     enabled: true
 
-#PrePush:
-# RSpec:
-#   enabled: true
-#   command: ["bundle", "exec", "rspec"]
+  SomeHook:
+    enabled: true
+
+  Brakeman:
+    enabled: true
+
+PrePush:
+  RSpec:
+    enabled: true
 #
 #PostCheckout:
 #  ALL: # Special hook name that customizes all hooks of this type
