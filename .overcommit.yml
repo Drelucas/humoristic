@@ -36,7 +36,6 @@ PreCommit:
 
   RuboCop:
     enabled: true
-    command: ['bundle', 'exec', 'rubocop'] # Invoke within Bundler context
     on_warn: fail # Treat all warnings as failures
     #on_warn: warn # Treat all warnings as warnings
     # Include:
