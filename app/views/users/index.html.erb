@@ -1,33 +1,31 @@
-<p id="notice"><%= notice %></p>
+<h1 class="ls-title-intro ls-ico-user-add">Usuários</h1>
 
-<h1>Listing Users</h1>
+<% @users.each do |user| %>
 
-<table>
-  <thead>
-    <tr>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Email</th>
-      <th>Admin</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="ls-list">
+  <header class="ls-list-header">
+    <div class="ls-list-title col-md-9">
+      <strong>Nome</strong>
+      <small><%= link_to user.first_name%></small>
+    </div>
+  </header>
+  <div class="ls-list-content ">
+    <div class="col-xs-12 col-md-6">
+        <span class="ls-list-label">Sobrenome</span>
+      <strong><%= user.last_name %></strong>
+    </div>
+    <div class="col-xs-12 col-md-6">
+        <span class="ls-list-label">Email</span>
+      <strong><%= user.email %></strong>
+    </div>
+    <div class="col-xs-12 col-md-6">
+        <span class="ls-list-label">Admin</span>
+      <strong><%= user.admin %></strong>
+    </div>
+  </div>
+</div>
+<% end %>
 
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.first_name %></td>
-        <td><%= user.last_name %></td>
-        <td><%= user.email %></td>
-        <td><%= user.admin %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New User', new_user_path %>
+<div class="ls-pagination-filter ">
+     <%= link_to 'Novo Usuário', new_user_path , class: "ls-btn-darker" %>
+</div>

@@ -1,33 +1,49 @@
-<%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-      <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<%= form_for(@user, html: { class: "ls-form row" }) do |f| %>
+  <fieldset>
+    <div class="row">
+      <div class="col-md-8">
+        <label class="ls-label col-md-6">
+        <span class="ls-label-text"><%= f.label :first_name, "Nome" %></span>
+        <%= f.text_field :first_name %>
+      </label>
+     </div>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
-  </div>
-  <div class="field">
-    <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :admin %><br>
-    <%= f.check_box :admin %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="row">
+      <div class="col-md-8">
+        <label class="ls-label col-md-6">
+        <span class="ls-label-text"><%= f.label :last_name, "Sobrenome" %></span>
+        <%= f.text_field :last_name %>
+      </label>
+     </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8">
+        <label class="ls-label col-md-8">
+        <span class="ls-label-text"><%= f.label :email, "Email" %></span>
+        <%= f.text_field :email %>
+
+      </label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8">
+        <label class="ls-label col-md-4">
+        <span class="ls-label-text"><%= f.label :admin, "Admin" %></span>
+               <%= f.text_field :admin %>
+        </label>
+      </div>
+    </div>
+       <%= f.button  "Salvar", :type => "submit" , class: "ls-btn-primary"%>
+       <%= f.submit "Limpar", :type => "reset",  class: "ls-btn-primary" %>
+       <%= link_to 'Voltar', users_path, class: "ls-btn-darker" %>
+    </div>
+    </div>
+
+ </fieldset>
+
 <% end %>
+
+
