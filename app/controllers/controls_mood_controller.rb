@@ -1,0 +1,2 @@
+class ControlsMoodController < ApplicationController
+end
