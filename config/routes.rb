@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   resources :users
+  resources :teams
+  resources :moods
+  resources :controls_mood
   get 'home/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
