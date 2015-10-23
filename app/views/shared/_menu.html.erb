@@ -1,38 +1,30 @@
 <aside class="ls-sidebar">
   <nav class="ls-menu">
     <ul>
-      <li>
-        <a class="ls-ico-home" href="#"> Painel Inicial </a>
+      <li >
+        <a class="ls-ico-star" href=""> Como está se sentindo? </a>
       </li>
       <li class="ls-submenu">
-        <a class="ls-ico-star" href=""> Humores </a>
-           <ul>
-               <li><a class="ls-submenu-item" href=""> Humor </a></li>
-           </ul>
-      </li>
-      <li class="ls-submenu">
-        <a class="ls-ico-users" href="">  Cadastros </a>
+        <a class="ls-ico-edit-admin" href="">  Cadastros </a>
           <ul>
-              <li><%= link_to 'Usuários', users_path, class: "ls-submenu-item" %></li>
-         </ul>
+            <li><%= link_to 'Usuário', users_path, class: "ls-ico-user" %></li>
+          </ul>
           <ul>
-              <li><a class="ls-submenu-item" href=""> Times </a></li>
-         </ul>
+            <li><a class="ls-ico-users" href=""> Time </a></li>
+          </ul>
+          <ul>
+            <li><a class="ls-ico-star" href=""> Humor </a></li>
+          </ul>
       </li>
       <li class="ls-submenu">
         <a class="ls-ico-chart-bar-up" href="">  Relatórios </a>
         <ul>
-           <li><a class="ls-submenu-item" href=""> Humor semanal </a></li>
+           <li><a class="ls-ico-week" href=""> Humor semanal </a></li>
         </ul>
         <ul>
-           <li><a class="ls-submenu-item" href=""> Humor do time </a></li>
+           <li><a class="ls-ico-stats" href=""> Humor do time </a></li>
         </ul>
-      </li>
-      <li >
-        <a class="ls-ico-user-add" href="">  Administradores </a>
       </li>
     </ul>
   </nav>
 </aside>
-
-
