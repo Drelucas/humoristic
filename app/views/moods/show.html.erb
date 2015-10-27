@@ -1,4 +1,21 @@
-<p id="notice"><%= notice %></p>
+<h1 class="ls-title-intro ls-ico-user-add">Humores</h1>
+<%= form_for(@mood, html: { class: "ls-form row" }) do |f| %>
+<div class="ls-box">
+<div class="row">
+  <div class="col-md-12">
+    <div class="ls-box">
+      <p><strong>Tipo</strong></p>
+      <p class="ls-break-text"><%= @mood.kind %></p>
+      <hr>
+      <p><strong>Imagens</strong></p>
+      <p class="ls-break-text"><%= @mood.image_url %></p>
+      <hr>
+    </div>
+  </div>
+</div>
+</div>
 
-<%= link_to 'Edit', edit_mood_path(@mood) %> |
-<%= link_to 'Back', moods_path %>
+<%= link_to 'Editar', edit_mood_path(@mood) , class: "ls-btn-darker" %>
+<%= link_to 'Voltar', moods_path, class: "ls-btn-darker" %>
+
+<% end %>

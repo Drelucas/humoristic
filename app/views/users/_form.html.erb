@@ -3,36 +3,16 @@
     <div class="row">
       <div class="col-md-8">
         <label class="ls-label col-md-6">
-        <span class="ls-label-text"><%= f.label :first_name, "Nome" %></span>
-        <%= f.text_field :first_name %>
+        <span class="ls-label-text"><%= f.label :name, "Nome" %></span>
+        <%= f.text_field :name %>
       </label>
      </div>
     </div>
-
-    <div class="row">
-      <div class="col-md-8">
-        <label class="ls-label col-md-6">
-        <span class="ls-label-text"><%= f.label :last_name, "Sobrenome" %></span>
-        <%= f.text_field :last_name %>
-      </label>
-     </div>
-    </div>
-
     <div class="row">
       <div class="col-md-8">
         <label class="ls-label col-md-8">
         <span class="ls-label-text"><%= f.label :email, "Email" %></span>
         <%= f.text_field :email %>
-
-      </label>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-8">
-        <label class="ls-label col-md-4">
-        <span class="ls-label-text"><%= f.label :admin, "Admin" %></span>
-               <%= f.check_box :admin, {}, true, false %>
         </label>
       </div>
     </div>
@@ -45,5 +25,3 @@
  </fieldset>
 
 <% end %>
-
-

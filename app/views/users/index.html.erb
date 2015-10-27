@@ -6,21 +6,12 @@
   <header class="ls-list-header">
     <div class="ls-list-title col-md-9">
       <strong>Nome</strong>
-      <small><%= link_to user.first_name%></small>
+      <small><%= link_to user.name%></small>
     </div>
   </header>
-  <div class="ls-list-content ">
-    <div class="col-xs-12 col-md-6">
-        <span class="ls-list-label">Sobrenome</span>
-      <strong><%= user.last_name %></strong>
-    </div>
     <div class="col-xs-12 col-md-6">
         <span class="ls-list-label">Email</span>
       <strong><%= user.email %></strong>
-    </div>
-    <div class="col-xs-12 col-md-6">
-        <span class="ls-list-label">Admin</span>
-      <strong><%= user.admin %></strong>
     </div>
   </div>
 </div>

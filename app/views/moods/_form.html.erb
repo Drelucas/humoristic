@@ -1,17 +1,30 @@
-<%= form_for(@mood) do |f| %>
-  <% if @mood.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@mood.errors.count, "error") %> prohibited this mood from being saved:</h2>
-
-      <ul>
-      <% @mood.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<%= form_for(@mood, html: { class: "ls-form row" }) do |f| %>
+  <fieldset>
+    <div class="row">
+      <div class="col-md-8">
+        <label class="ls-label col-md-6">
+        <span class="ls-label-text"><%= f.label :kind, "Tipo" %></span>
+        <%= f.text_field :kind %>
+      </label>
+     </div>
     </div>
-  <% end %>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="row">
+      <div class="col-md-8">
+        <label class="ls-label col-md-6">
+        <span class="ls-label-text"><%= f.label :image_url, "Imagens" %></span>
+        <%= f.text_field :image_url %>
+      </label>
+     </div>
+    </div>
+       <%= f.button  "Salvar", :type => "submit" , class: "ls-btn-primary"%>
+       <%= f.submit "Limpar", :type => "reset",  class: "ls-btn-primary" %>
+       <%= link_to 'Voltar', moods_path, class: "ls-btn-darker" %>
+    </div>
+    </div>
+
+ </fieldset>
+
 <% end %>
+
+
