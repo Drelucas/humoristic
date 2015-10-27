@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
   <link href="http://assets.locaweb.com.br/locastyle/3.8.1/bootstrap/css/bootstrap.css">
   <%= stylesheet_link_tag "application", SECRETS["locastyle"]["css"], :media => "screen" %>
-
   <%= stylesheet_link_tag "application", :media => "all"  %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -18,35 +17,10 @@
     <div class="ls-login-inner">
       <div class="ls-login-container">
         <div class="ls-login-box">
-          <h1 class="ls-login-logo"><img title="Logo login" src="../../../assets/images/locastyle/logo-locaweb.jpg" /></h1>
+          <!--<h1 class="ls-login-logo"><img title="Logo login" src="../../../assets/images/locastyle/logo-locaweb.jpg" /></h1>-->
           <%= yield %>
-          <!-- <form role="form" class="ls-form ls-login-form" action="#">
-            <fieldset>
-
-              <label class="ls-label">
-                <b class="ls-label-text ls-hidden-accessible">Usuário</b>
-                <input class="ls-login-bg-user ls-field-lg" type="text" placeholder="Usuário" required autofocus>
-              </label>
-
-              <label class="ls-label">
-                <b class="ls-label-text ls-hidden-accessible">Senha</b>
-                <div class="ls-prefix-group">
-                  <input id="password_field" class="ls-login-bg-password ls-field-lg" type="password" placeholder="Senha" required>
-                  <a class="ls-label-text-prefix ls-toggle-pass ls-ico-eye" data-toggle-class="ls-ico-eye, ls-ico-eye-blocked" data-target="#password_field" href="#"></a>
-                </div>
-              </label>
-
-              <p><a class="ls-login-forgot" href="forgot-password">Esqueci minha senha</a></p>
-
-              <input type="submit" value="Entrar" class="ls-btn-primary ls-btn-block ls-btn-lg">
-              <p class="ls-txt-center ls-login-signup">Não possui um usuário na Locaweb? <a href="#">Cadastre-se agora</a></p>
-
-            </fieldset>
-          </form> -->
         </div>
-
-        <div class="ls-login-adv"><img title="Exemplo banner" src="../../../assets/images/banner-example.png" /></div>
-
+       <!--  <div class="ls-login-adv"><img title="Exemplo banner" src="../../../assets/images/banner-example.png" /></div> -->
       </div>
     </div>
   </div>
