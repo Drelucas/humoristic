@@ -29,7 +29,7 @@
   <thead>
     <tr>
       <th>Usuário</th>
-      <th class="hidden-xs">Email</th>
+      <th class="hidden-xs">Admin</th>
     </tr>
   </thead>
 
@@ -37,7 +37,7 @@
     <% @teams.each do |team| %>
     <tr>
       <td><%= link_to team.name, team %></td>
-      <td class="hidden-xs"><%= team.email %></td>
+      <td class="hidden-xs"><%= team.user_admin %></td>
     </tr>
     <% end %>
   </tbody>
