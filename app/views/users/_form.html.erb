@@ -1,27 +1,28 @@
 <%= form_for(@user, html: { class: "ls-form row" }) do |f| %>
-  <fieldset>
-    <div class="row">
-      <div class="col-md-8">
-        <label class="ls-label col-md-6">
+<fieldset>
+  <div class="row">
+    <div class="col-md-8">
+      <label class="ls-label col-md-6">
         <span class="ls-label-text"><%= f.label :name, "Nome" %></span>
         <%= f.text_field :name %>
       </label>
-     </div>
     </div>
-    <div class="row">
-      <div class="col-md-8">
-        <label class="ls-label col-md-8">
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <label class="ls-label col-md-8">
         <span class="ls-label-text"><%= f.label :email, "Email" %></span>
         <%= f.text_field :email %>
-        </label>
-      </div>
-    </div>
-       <%= f.button  "Salvar", :type => "submit" , class: "ls-btn-primary"%>
-       <%= f.submit "Limpar", :type => "reset",  class: "ls-btn-primary" %>
-       <%= link_to 'Voltar', users_path, class: "ls-btn-darker" %>
-    </div>
+      </label>
     </div>
 
- </fieldset>
+  </div>
 
+</fieldset>
+
+   <div class="ls-actions-btn">
+      <%= f.button  "Salvar", :type => "submit" , class: "ls-btn-primary"%>
+      <%= f.submit "Limpar", :type => "reset",  class: "ls-btn-primary" %>
+      <%= link_to 'Voltar', users_path, class: "ls-btn-darker" %>
+  </div>
 <% end %>

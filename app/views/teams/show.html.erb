@@ -1,4 +1,19 @@
-<p id="notice"><%= notice %></p>
+<h1 class="ls-title-intro ls-ico-user-add">Times</h1>
+<div class="ls-box">
+<div class="row">
+  <div class="col-md-12">
+    <div class="ls-box">
+      <p><strong>Nome</strong></p>
+      <p class="ls-break-text"><%= @team.name %></p>
+      <hr>
+      <p><strong>Usuário</strong></p>
+      <p class="ls-break-text"><%= @team.current_user
+       %></p>
+    </div>
+  </div>
+</div>
+</div>
 
-<%= link_to 'Edit', edit_team_path(@team) %> |
-<%= link_to 'Back', teams_path %>
+<%= link_to 'Editar', edit_team_path(@team) , class: "ls-btn-darker" %>
+<%= link_to 'Voltar', teams_path, class: "ls-btn-darker" %>
+

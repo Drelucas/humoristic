@@ -1,5 +1,4 @@
 <h1 class="ls-title-intro ls-ico-user-add">Humores</h1>
-<%= form_for(@mood, html: { class: "ls-form row" }) do |f| %>
 <div class="ls-box">
 <div class="row">
   <div class="col-md-12">
@@ -17,5 +16,3 @@
 
 <%= link_to 'Editar', edit_mood_path(@mood) , class: "ls-btn-darker" %>
 <%= link_to 'Voltar', moods_path, class: "ls-btn-darker" %>
-
-<% end %>

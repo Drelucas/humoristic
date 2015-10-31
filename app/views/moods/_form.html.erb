@@ -17,14 +17,13 @@
       </label>
      </div>
     </div>
-       <%= f.button  "Salvar", :type => "submit" , class: "ls-btn-primary"%>
-       <%= f.submit "Limpar", :type => "reset",  class: "ls-btn-primary" %>
-       <%= link_to 'Voltar', moods_path, class: "ls-btn-darker" %>
-    </div>
-    </div>
 
  </fieldset>
 
+   <div class="ls-actions-btn">
+      <%= f.button  "Salvar", :type => "submit" , class: "ls-btn-primary"%>
+      <%= f.submit "Limpar", :type => "reset",  class: "ls-btn-primary" %>
+      <%= link_to 'Voltar', moods_path, class: "ls-btn-darker" %>
+  </div>
+
 <% end %>
-
-
