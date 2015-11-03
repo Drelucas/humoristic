@@ -30,6 +30,7 @@
     <tr>
       <th>Usuário</th>
       <th class="hidden-xs">Email</th>
+      <th class="hidden-xs">Telefone</th>
     </tr>
   </thead>
 
@@ -38,6 +39,7 @@
     <tr>
       <td><%= link_to user.name, user %></td>
       <td class="hidden-xs"><%= user.email %></td>
+      <td class="hidden-xs"><%= user.phone %></td>
     </tr>
     <% end %>
   </tbody>

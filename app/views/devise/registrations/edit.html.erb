@@ -1,11 +1,20 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h1 class="ls-title-4">Editar Conta</h1>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <span class="ls-label-text"><%= f.label :name, "Nome" %></span><br />
+    <%= f.text_field :name, autofocus: true %> </div>
+
+  <div class="field">
+    <span class="ls-label-text"><%= f.label :email, "Email" %></span><br />
+    <%= f.email_field :email %>
+  </div>
+
+  <div class="field">
+    <span class="ls-label-text"><%= f.label :phone, "Telefone" %></span><br />
+    <%= f.text_field :phone, class: 'ls-mask-phone8_with_ddd', placeholder: '(99) 9999-9999' %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -13,17 +22,17 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <span class="ls-label-text"><%= f.label :password, "Senha" %></span> <i>(leave blank if you don't want to change it)</i><br />
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <span class="ls-label-text"><%= f.label :password_confirmation, "Confirmação de Senha" %></span><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
   <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <span class="ls-label-text"><%= f.label :current_password, "Senha Atual" %></span> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
