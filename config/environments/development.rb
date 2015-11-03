@@ -47,7 +47,9 @@ Rails.application.configure do
                                         :port => '587',
                                         :authentication => :plain,
                                         :domain => 'gmail.com',
-                                        :user_name => 'apphumoristic',
-                                        :password => 'inicial1234'
+                                        :user_name => SECRETS["site"]["user_name"],
+                                        :password => SECRETS["site"]["password"]
+                                        # :user_name => 'apphumoristic',
+                                        # :password => 'inicial1234'
                                         }
 end
