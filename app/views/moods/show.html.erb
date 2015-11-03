@@ -1,17 +1,15 @@
-<h1 class="ls-title-intro ls-ico-user-add">Humores</h1>
+<h1 class="ls-title-intro ls-ico-user-add">Cadastro de Humor</h1>
 <div class="ls-box">
-<div class="row">
-  <div class="col-md-12">
-    <div class="ls-box">
-      <p><strong>Tipo</strong></p>
-      <p class="ls-break-text"><%= @mood.kind %></p>
-      <hr>
-      <p><strong>Imagens</strong></p>
-      <p class="ls-break-text"><%= @mood.image_url %></p>
-      <hr>
+  <div class="row">
+    <div class="col-md-12">
+        <table class="ls-table ls-table-striped ls-no-hover ls-sm-space ls-no-margin-top">
+          <tbody>
+            <tr> <td> Tipo: <label class="ls-title-6"><%= @mood.kind %></label> </td> </tr>
+            <tr> <td> Imagens: <label class="ls-title-6"><%= @mood.image_url%></label> </td> </tr>
+          </tbody>
+        </table>
     </div>
   </div>
-</div>
 </div>
 
 <%= link_to 'Editar', edit_mood_path(@mood) , class: "ls-btn-darker" %>

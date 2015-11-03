@@ -1,19 +1,16 @@
-<h1 class="ls-title-intro ls-ico-user-add">Times</h1>
+<h1 class="ls-title-intro ls-ico-user-add">Cadastro do Time</h1>
 <div class="ls-box">
-<div class="row">
-  <div class="col-md-12">
-    <div class="ls-box">
-      <p><strong>Nome</strong></p>
-      <p class="ls-break-text"><%= @team.name %></p>
-      <hr>
-      <p><strong>Usuário admin</strong></p>
-      <p class="ls-break-text"><%= @team.current_user
-       %></p>
+  <div class="row">
+    <div class="col-md-12">
+        <table class="ls-table ls-table-striped ls-no-hover ls-sm-space ls-no-margin-top">
+          <tbody>
+            <tr> <td> Nome: <label class="ls-title-6"><%= @team.name %></label> </td> </tr>
+            <tr> <td> Usuário admin: <label class="ls-title-6"><%= @team.current_user%></label> </td> </tr>
+          </tbody>
+        </table>
     </div>
   </div>
-</div>
 </div>
 
 <%= link_to 'Editar', edit_team_path(@team) , class: "ls-btn-darker" %>
 <%= link_to 'Voltar', teams_path, class: "ls-btn-darker" %>
-
