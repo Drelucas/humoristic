@@ -11,18 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151105173610) do
+ActiveRecord::Schema.define(version: 20151105231235) do
 
   create_table "control_moods", force: :cascade do |t|
-    t.integer  "moods_id"
+    t.integer  "mood_id"
     t.string   "work"
-    t.integer  "users_id"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "control_moods", ["moods_id"], name: "index_control_moods_on_moods_id"
-  add_index "control_moods", ["users_id"], name: "index_control_moods_on_users_id"
+  add_index "control_moods", ["mood_id"], name: "index_control_moods_on_mood_id"
+  add_index "control_moods", ["user_id"], name: "index_control_moods_on_user_id"
 
   create_table "moods", force: :cascade do |t|
     t.string   "kind"

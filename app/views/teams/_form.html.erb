@@ -1,5 +1,3 @@
-<form action="" class="ls-form row">
-
 <%= form_for(@team, html: { class: "ls-form row" }) do |f| %>
 <% if @team.errors.any? %>
 <div id="error_explanation">
@@ -23,23 +21,21 @@
     </div>
   </div>
 
-</fieldset>
 
-<div class="ls-box ls-md-space ls-ico-user-add ls-ico-bg">
-<h1 class="ls-title ls-color-theme">Adicione usuários ao time</h1>
-  <p></p>
-
-  <label class="ls-label col-md-4 col-xs-12">
-    <span class="ls-label-text"><%= f.label :name, "Usuários" %></span>
-      <%= select(:team, :user_id,
+  <div class="row">
+    <div class="col-md-8">
+      <label class="ls-label col-md-6">
+        <span class="ls-label-text"><%= f.label :users, "Usuários" %></span>
+        <%= select(:team, :user_id,
              options_from_collection_for_select(@users, :id, :email),
              {}, 
              multiple: true, class: 'select2'
              ) %>
- </label>
- <p></p>
+      </label>
+    </div>
+  </div>
 
-</div>
+</fieldset>
 
 <div class="ls-actions-btn">
   <%= f.button  "Salvar", :type => "submit" , class: "ls-btn-primary"%>
@@ -47,4 +43,3 @@
   <%= link_to 'Voltar', teams_path, class: "ls-btn-darker" %>
 </div>
 <% end %>
-</form>

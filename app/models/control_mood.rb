@@ -1,4 +1,4 @@
 class ControlMood < ActiveRecord::Base
-  belongs_to :moods
-  belongs_to :users
+  belongs_to :mood
+  belongs_to :user
 end

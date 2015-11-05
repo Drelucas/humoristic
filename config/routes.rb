@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :control_moods
   devise_for :users
   
   resources :users
