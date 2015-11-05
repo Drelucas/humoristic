@@ -12,6 +12,10 @@ class UsersController < ApplicationController
   def show
   end
 
+  def search
+    @users = User.where(name: params[:name])
+  end
+
   # GET /users/new
   def new
     @user = User.new
