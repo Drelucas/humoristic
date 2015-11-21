@@ -1,2 +1,70 @@
-<h1>Humoristic</h1>
-<p><%= @welcome %></p>
+
+<h1 class="ls-title-intro ls-ico-history">Humoristic</h1>
+
+<div class="ls-box ls-board-box">
+	<header class="ls-info-header">
+		<h2 class="ls-title-3">Humores & Pessoas</h2>
+	</header>
+
+	<div id="sending-stats" class="row">
+		<div class="col-sm-6 col-md-3">
+			<div class="ls-box">
+				<div class="ls-box-head">
+					<h6 class="ls-title-4">Seus humores</h6>
+				</div>
+				<div class="ls-box-body">
+					<span class="ls-board-data">
+						<strong>11</strong>
+					</span>
+				</div>
+				<div class="ls-box-footer">
+					<a><%= link_to 'Como está se sentindo?', control_moods_path, class: "ls-btn ls-btn-xs" %></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-6 col-md-3">
+			<div class="ls-box">
+				<div class="ls-box-head">
+					<h6 class="ls-title-4">Humores do Time</h6>
+				</div>
+				<div class="ls-box-body">
+					<span class="ls-board-data">
+						<strong>27</strong>
+					</span>
+				</div>
+				<div class="ls-box-footer">
+					<a><%= link_to 'Adicionar pessoas ao time', teams_path, class: "ls-btn ls-btn-xs" %></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-6 col-md-3">
+			<div class="ls-box">
+				<div class="ls-box-head">
+					<h6 class="ls-title-4">Pessoas do seu Time</h6>
+				</div>
+				<div class="ls-box-body">
+					<span class="ls-board-data">
+						<strong>14</strong>
+					</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-6 col-md-3">
+			<div class="ls-box">
+				<div class="ls-box-head">
+					<h6 class="ls-title-4 color-default"></h6>
+				</div>
+				<div class="ls-box-body">
+					<span class="ls-board-data">
+						<strong class="ls-color-theme">81%</strong>
+						<small>989.257</small>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>

@@ -9,8 +9,19 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  WillPaginate.per_page = 10
+
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :name
+  end
+
+  def per_page
+    params[:per_page] if params[:per_page].present?
+  end
+
+  def make_paginate(list)
+    per_page = params[:per_page] if params[:per_page].present?
+    list.paginate(page: params[:page], per_page: per_page)
   end
 
   protected

@@ -1,16 +1,15 @@
 Rails.application.routes.draw do
 
-  resources :control_moods
-  devise_for :users
-  
-  resources :users
-
-  get 'users/search/:name', controller: :users, action: :search
-
-  resources :teams
-  resources :moods
-  resources :controls_mood
   get 'home/index'
   root :to => 'home#index'
 
+  devise_for :users
+  
+  resources :users, path: 'customusers', shallow: true do
+    get 'search', to: 'users#search', as: 'search', on: :collection
+  end
+
+  resources :teams
+  resources :moods
+  resources :control_moods
 end

@@ -4,7 +4,8 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @users ||= User.all
+    @users = make_paginate(@users)
   end
 
   # GET /users/1
@@ -13,7 +14,9 @@ class UsersController < ApplicationController
   end
 
   def search
-    @users = User.where(name: params[:name])
+    @users = ::User::FinderService.find(search_params)
+    @users = make_paginate(@users)
+    render action: 'index'
   end
 
   # GET /users/new
@@ -69,6 +72,10 @@ class UsersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
+    end
+
+    def search_params
+      params.require(:search).permit(:type, :text)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
