@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="ls-theme-light-red">
 <head>
-  <title> <%= SECRETS["site"]["title"] %> </title>
+  <title><%= SECRETS["site"]["title"] %></title>
   <meta charset="utf-8">
   <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -11,16 +11,23 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-
 <body>
+
   <div class="ls-login-parent">
     <div class="ls-login-inner">
       <div class="ls-login-container">
         <div class="ls-login-box">
-          <!--<h1 class="ls-login-logo"><img title="Logo login" src="../../../assets/images/locastyle/logo-locaweb.jpg" /></h1>-->
+          <h1 class="ls-login-logo"><%= image_tag("moodlogo.jpg", alt: "Humoristic") %></h1>
           <%= yield %>
+
+          <%= javascript_include_tag "//code.jquery.com/jquery-2.1.3.min.js" %>
+          <%= javascript_include_tag SECRETS["locastyle"]["js"] %>
+
+          <%= javascript_include_tag "application" %>
+          <script type='text/javascript'>
+            <%= yield :javascript %>
+          </script>
         </div>
-       <!--  <div class="ls-login-adv"><img title="Exemplo banner" src="../../../assets/images/banner-example.png" /></div> -->
       </div>
     </div>
   </div>

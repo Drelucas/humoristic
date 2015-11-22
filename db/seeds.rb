@@ -7,11 +7,11 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 puts ''
 
-puts 'Creating Users...'
+puts 'Creating User Admin...'
 User.create! :name => "admin", :email => "admin@admin.com", :password => "inicial1234"
-User.create! :name => "teste", :email => "teste@teste.com", :password => "inicial1234"
-User.create! :name => "teste1", :email => "teste1@teste.com", :password => "inicial1234"
-User.create! :name => "teste2", :email => "teste2@teste.com", :password => "inicial1234"
-User.create! :name => "teste3", :email => "teste3@teste.com", :password => "inicial1234"
-User.create! :name => "teste4", :email => "teste4@teste.com", :password => "inicial1234"
-User.create! :name => "teste5", :email => "teste5@teste.com", :password => "inicial1234"
+
+# puts 'Creating Mood...'
+# Mood.find_or_create_by({:kind => "Alegre", :image_url => "71155072871"})
+# Mood.find_or_create_by({:kind => "Animado", :image_url => "67770445230"})
+# Mood.find_or_create_by({:kind => "Bem", :image_url => "40062472143"})
+# 	
