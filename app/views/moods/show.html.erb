@@ -5,7 +5,7 @@
         <table class="ls-table ls-table-striped ls-no-hover ls-sm-space ls-no-margin-top">
           <tbody>
             <tr> <td> Tipo: <label class="ls-title-6"><%= @mood.kind %></label> </td> </tr>
-            <tr> <td> Imagens: <label class="ls-title-6"><%= @mood.image%></label> </td> </tr>
+            <tr> <td> Imagem: <label class="ls-title-6"><%= image_tag(@mood.image)%></label> </td> </tr>
           </tbody>
         </table>
     </div>

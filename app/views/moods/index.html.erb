@@ -36,8 +36,7 @@
     <% @moods.each do |mood| %>
     <tr>
       <td><%= link_to mood.kind, mood %></td>
-      <td class="hidden-xs"><%= mood.image %></td>
-      
+        <td class="hidden-xs"><%= image_tag(mood.image) %></td>
     </tr>
     <% end %>
   </tbody>

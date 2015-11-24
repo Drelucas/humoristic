@@ -1,3 +1,9 @@
+<% if @user.errors.any? %>
+<div id="error_explanation">
+<%= t 'general.form_error' %>
+</div>
+<% end %>
+
 <%= form_for(@user, html: { class: "ls-form row" }) do |f| %>
 <fieldset>
   <div class="row">
@@ -5,6 +11,7 @@
       <label class="ls-label col-md-6">
         <span class="ls-label-text"><%= f.label :name, "Nome" %></span>
         <%= f.text_field :name %>
+        <%= error_tag @user, :name %>
       </label>
     </div>
   </div>
@@ -14,6 +21,7 @@
       <label class="ls-label col-md-6">
         <span class="ls-label-text"><%= f.label :email, "Email" %></span>
         <%= f.text_field :email %>
+        <%= error_tag @user, :email %>
       </label>
     </div>
   </div>
