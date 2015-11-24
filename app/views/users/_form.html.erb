@@ -1,34 +1,28 @@
-<% if @user.errors.any? %>
-<div id="error_explanation">
-<%= t 'general.form_error' %>
-</div>
-<% end %>
-
 <%= form_for(@user, html: { class: "ls-form row" }) do |f| %>
 <fieldset>
   <div class="row">
     <div class="col-md-8">
-      <label class="ls-label col-md-6">
+      <label class="ls-label col-md-6 <%= class_error @user, :name %>">
         <span class="ls-label-text"><%= f.label :name, "Nome" %></span>
         <%= f.text_field :name %>
-        <%= error_tag @user, :name %>
+        <%= show_message_error @user, :name %>
       </label>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-8 <%= class_error @user, :email %>">
       <label class="ls-label col-md-6">
         <span class="ls-label-text"><%= f.label :email, "Email" %></span>
         <%= f.text_field :email %>
-        <%= error_tag @user, :email %>
+        <%= show_message_error @user, :email %>
       </label>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-8">
-      <label class="ls-label col-md-3">
+      <label class="ls-label col-md-3 <%= class_error @user, :name %>">
         <span class="ls-label-text"><%= f.label :phone, "Telefone" %></span>
         <%= f.text_field :phone, class: 'ls-mask-phone', placeholder: '(99) 9999-9999' %>
       </label>
@@ -43,5 +37,3 @@
   <%= link_to 'Voltar', users_path, class: "ls-btn-darker" %>
 </div>
 <% end %>
-
-

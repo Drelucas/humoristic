@@ -9,7 +9,7 @@
     - Sex
     - Sáb
     abbr_month_names:
-    - 
+    -
     - Jan
     - Fev
     - Mar
@@ -35,7 +35,7 @@
       long: "%d de %B de %Y"
       short: "%d de %B"
     month_names:
-    - 
+    -
     - Janeiro
     - Fevereiro
     - Março
@@ -205,6 +205,8 @@
       short: "%d de %B, %H:%M"
     pm: ''
   will_paginate:
+    show: Mostrar
+    per_page: por página
     previous_label: "&#8592; Anterior"
     next_label: "Próximo &#8594;"
     page_gap: "&hellip;"

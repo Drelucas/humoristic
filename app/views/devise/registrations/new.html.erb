@@ -1,33 +1,37 @@
 <h1 class="ls-title-4">Criar Conta</h1>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
 
-  <div class="field">
+  <div class="field <%= class_error @user, :name %>">
     <span class="ls-label-text"><%= f.label :name, "Nome" %></span><br />
-    <%= f.text_field :name, autofocus: true %> </div>
-
-  <div class="field">
-    <span class="ls-label-text"><%= f.label :email, "Email" %></span><br />
-    <%= f.email_field :email %>
+    <%= f.text_field :name, autofocus: true %>
+    <%= show_message_error @user, :name %>
   </div>
 
-  <div class="field">
+  <div class="field <%= class_error @user, :email %>">
+    <span class="ls-label-text"><%= f.label :email, "Email" %></span><br />
+    <%= f.email_field :email %>
+    <%= show_message_error @user, :email %>
+  </div>
+
+  <div class="field <%= class_error @user, :phone %>">
     <span class="ls-label-text"><%= f.label :phone, "Telefone" %></span><br />
     <%= f.text_field :phone, class: 'ls-mask-phone', placeholder: '(99) 9999-9999' %>
   </div>
 
-  <div class="field">
+  <div class="field <%= class_error @user, :password %>">
     <span class="ls-label-text"><%= f.label :password, "Senha" %></span><br />
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> caracteres minimos)</em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "off" %>
+    <%= show_message_error @user, :password %>
   </div>
 
-  <div class="field">
+  <div class="field <%= class_error @user, :password_confirmation %>">
     <span class="ls-label-text"><%= f.label :password_confirmation, "Confirmação de Senha" %></span><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= show_message_error @user, :password_confirmation %>
   </div>
 
   <div class="actions">
