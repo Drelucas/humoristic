@@ -36,7 +36,7 @@ class TeamsController < ApplicationController
           @team.users << User.find(user) if user.present?
           @team.save!
         end
-        format.html { redirect_to @team, notice: 'team was successfully created.' }
+        format.html { redirect_to @team, notice: 'Time criado com sucesso.' }
         format.json { render :show, status: :created, location: @team }
       else
         format.html { render :new }
@@ -56,7 +56,7 @@ class TeamsController < ApplicationController
   def update
     respond_to do |format|
       if @team.update(team_params)
-        format.html { redirect_to @team, notice: 'team was successfully updated.' }
+        format.html { redirect_to @team, notice: 'Time atualizado com sucesso.' }
         format.json { render :show, status: :ok, location: @team }
       else
         format.html { render :edit }
@@ -70,7 +70,7 @@ class TeamsController < ApplicationController
   def destroy
     @team.destroy
     respond_to do |format|
-      format.html { redirect_to teams_url, notice: 'team was successfully destroyed.' }
+      format.html { redirect_to teams_url, notice: 'Time excluído com sucesso.' }
       format.json { head :no_content }
     end
   end

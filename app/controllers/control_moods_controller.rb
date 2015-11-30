@@ -31,7 +31,7 @@ class ControlMoodsController < ApplicationController
 
     respond_to do |format|
       if @control_mood.save
-        format.html { redirect_to @control_mood, notice: 'Control mood was successfully created.' }
+        format.html { redirect_to @control_mood, notice: 'Humor adicionado com sucesso.' }
         format.json { render :show, status: :created, location: @control_mood }
       else
         format.html { render :new }
@@ -51,7 +51,7 @@ class ControlMoodsController < ApplicationController
   def update
     respond_to do |format|
       if @control_mood.update(control_mood_params)
-        format.html { redirect_to @control_mood, notice: 'Control mood was successfully updated.' }
+        format.html { redirect_to @control_mood, notice: 'Humor alterado.' }
         format.json { render :show, status: :ok, location: @control_mood }
       else
         format.html { render :edit }
@@ -65,7 +65,7 @@ class ControlMoodsController < ApplicationController
   def destroy
     @control_mood.destroy
     respond_to do |format|
-      format.html { redirect_to control_moods_url, notice: 'Control mood was successfully destroyed.' }
+      format.html { redirect_to control_moods_url, notice: 'Humor excluído.' }
       format.json { head :no_content }
     end
   end
