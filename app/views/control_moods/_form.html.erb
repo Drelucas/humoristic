@@ -15,7 +15,18 @@
 
     <div class="row">
       <div class="col-md-8">
-        <label class="ls-label col-md-2">
+        <label class="ls-label col-md-4">
+        <span class="ls-label-text"><%= f.label :team_id, "Time" %></span>
+          <div class="ls-custom-select">
+            <%= f.collection_select(:team_id, Team.all, :id, :kind, class: "ls-state ls-select") %>
+          </div>
+        </label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8">
+        <label class="ls-label col-md-4">
         <span class="ls-label-text"><%= f.label :mood_id, "Humor" %></span>
           <div class="ls-custom-select">
             <%= f.collection_select(:mood_id, Mood.all, :id, :kind, class: "ls-state ls-select") %>
@@ -26,7 +37,7 @@
 
     <div class="row">
       <div class="col-md-8">
-        <label class="ls-label col-md-4">
+        <label class="ls-label col-md-6">
         <span class="ls-label-text"><%= f.label :work, "Trabalho" %></span>
         <%= f.text_field :work %>
       </label>

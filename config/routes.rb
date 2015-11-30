@@ -5,9 +5,9 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :users, path: 'customusers', shallow: true do
-    get 'search', to: 'users#search', as: 'search', on: :collection
-  end
+  # resources :users, path: 'customusers', shallow: true do
+  #   get 'search', to: 'users#search', as: 'search', on: :collection
+  # end
 
   resources :teams, shallow: true do
     get 'search', to: 'teams#search', as: 'search', on: :collection

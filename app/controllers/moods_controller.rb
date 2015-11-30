@@ -4,7 +4,9 @@ class MoodsController < ApplicationController
   # GET /moods
   # GET /moods.json
   def index
-    @moods = Mood.all
+    #@moods = Mood.all
+    @moods ||= Mood.all
+    @moods = make_paginate(@moods)
   end
 
   # GET /moods/1
@@ -37,6 +39,12 @@ class MoodsController < ApplicationController
     end
   end
 
+  def search
+    @mood = ::Mood::FinderService.find(search_params)
+    @mood = make_paginate(@mood)
+    render action: 'index'
+  end
+
   # PATCH/PUT /moods/1
   # PATCH/PUT /moods/1.json
   def update
@@ -51,6 +59,12 @@ class MoodsController < ApplicationController
     end
   end
 
+  def search
+    @mood = ::ControlMood::FinderService.find(search_params)
+    @mood = make_paginate(@mood)
+    render action: 'index'
+  end
+
   # DELETE /moods/1
   # DELETE /moods/1.json
   def destroy
@@ -62,14 +76,17 @@ class MoodsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_mood
-      @mood = Mood.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_mood
+    @mood = Mood.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def mood_params
-      params.require(:mood).permit(:kind, :image_url)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def mood_params
+    params.require(:mood).permit(:kind, :image_url)
+  end
 
+  def search_params
+    params.require(:search).permit(:type, :text)
+  end
 end

@@ -9,7 +9,7 @@
     <div class="ls-custom-select">
 
       <%= f.select(:type, {prompt: false}, class: "ls-select") do %>
-      <% ['Tipo', 'name'].each do |c| %>
+      <% [['Humor', 'name']].each do |c| %>
       <%= content_tag(:option, c.first, value: c.last) %>
       <% end %>
       <% end %>
@@ -24,13 +24,14 @@
   <label class="ls-label ">
     <%= submit_tag('Buscar', class: "ls-btn") %>
   </label>
+  <%= hidden_field_tag :per_page, params[:per_page] %>
   <%end%>
 </div>
 
 <table class="ls-table ls-table-striped">
   <thead>
     <tr>
-      <th>Tipo</th>
+      <th>Humor</th>
       <th class="hidden-xs">Imagem</th>
     </tr>
   </thead>

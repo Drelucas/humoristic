@@ -9,7 +9,7 @@
     <div class="ls-custom-select">
 
       <%= f.select(:type, {prompt: false}, class: "ls-select") do %>
-      <% ['Tipo', 'name'].each do |c| %>
+      <% [['Humor', 'mood_id'], ['Trabalho', 'work']].each do |c| %>
       <%= content_tag(:option, c.first, value: c.last) %>
       <% end %>
       <% end %>
@@ -24,6 +24,7 @@
   <label class="ls-label ">
     <%= submit_tag('Buscar', class: "ls-btn") %>
   </label>
+  <%= hidden_field_tag :per_page, params[:per_page] %>
   <%end%>
 </div>
 

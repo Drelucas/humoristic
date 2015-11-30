@@ -17,11 +17,13 @@ ActiveRecord::Schema.define(version: 20151105231235) do
     t.integer  "mood_id"
     t.string   "work"
     t.integer  "user_id"
+    t.integer  "team_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   add_index "control_moods", ["mood_id"], name: "index_control_moods_on_mood_id"
+  add_index "control_moods", ["team_id"], name: "index_control_moods_on_team_id"
   add_index "control_moods", ["user_id"], name: "index_control_moods_on_user_id"
 
   create_table "moods", force: :cascade do |t|

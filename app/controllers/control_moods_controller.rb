@@ -4,7 +4,9 @@ class ControlMoodsController < ApplicationController
   # GET /control_moods
   # GET /control_moods.json
   def index
-    @control_moods = ControlMood.all
+    #@control_moods = ControlMood.all
+    @control_moods ||= ControlMood.all
+    @control_moods = make_paginate(@control_moods)
   end
 
   # GET /control_moods/1
@@ -38,6 +40,12 @@ class ControlMoodsController < ApplicationController
     end
   end
 
+  def search
+    @control_mood = ::ControlMood::FinderService.find(search_params)
+    @control_mood = make_paginate(@control_mood)
+    render action: 'index'
+  end
+
   # PATCH/PUT /control_moods/1
   # PATCH/PUT /control_moods/1.json
   def update
@@ -63,13 +71,17 @@ class ControlMoodsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_control_mood
-      @control_mood = ControlMood.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_control_mood
+    @control_mood = ControlMood.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def control_mood_params
-      params.require(:control_mood).permit(:mood_id, :work, :user_id)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def control_mood_params
+    params.require(:control_mood).permit(:mood_id, :work, :user_id)
+  end
+
+  def search_params
+    params.require(:search).permit(:type, :text)
+  end
 end
