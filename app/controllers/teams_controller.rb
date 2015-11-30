@@ -30,6 +30,10 @@ class TeamsController < ApplicationController
 
     respond_to do |format|
       if @team.save
+        team_params[:user_id].each do |user|
+          @team.users << User.find(user) if user.present?
+          @team.save!
+        end
         format.html { redirect_to @team, notice: 'team was successfully created.' }
         format.json { render :show, status: :created, location: @team }
       else
@@ -71,7 +75,7 @@ class TeamsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def team_params
-      params.require(:team).permit(:name, :user_admin, :users_id)
+      params.require(:team).permit(:name, :user_admin, :user_id => [])
     end
 
 end

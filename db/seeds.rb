@@ -7,8 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 puts ''
 
-# puts 'Creating User Admin...'
-# User.create! :name => "admin", :email => "admin@admin.com", :password => "inicial1234"
+puts 'Creating User Admin...'
+User.create! :name => "admin", :email => "admin@admin.com", :password => "inicial1234"
 
 puts 'Creating Mood...'
 Mood.find_or_create_by({:kind => "Alegre", :image => "mood/alegre.png"})

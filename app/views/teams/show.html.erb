@@ -5,7 +5,12 @@
         <table class="ls-table ls-table-striped ls-no-hover ls-sm-space ls-no-margin-top">
           <tbody>
             <tr> <td> Nome: <label class="ls-title-6"><%= @team.name %></label> </td> </tr>
-            <tr> <td> Usuário admin: <label class="ls-title-6"><%= @team.current_user%></label> </td> </tr>
+             <tr> <td> Usuários: <label class="ls-title-6">
+              <% @team.users.each do |user| %>
+                <%= user.name %>
+              <% end %>
+            </label>
+               </td> </tr>
           </tbody>
         </table>
     </div>
