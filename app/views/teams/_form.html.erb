@@ -24,12 +24,12 @@
 
   <div class="row">
     <div class="col-md-8">
-      <label class="ls-label col-md-6">
+      <label class="ls-label col-md-12">
         <span class="ls-label-text"><%= f.label :users, "Usuários" %></span>
         <%= select(:team, :user_id,
          options_from_collection_for_select(@users, :id, :email),
          {},
-         multiple: true, class: 'select2'
+         multiple: true, class: 'select2 col-md-12'
          ) %>
 
       <script type="text/javascript">
