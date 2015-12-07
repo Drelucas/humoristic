@@ -1,57 +1,47 @@
-<%= form_for(@control_mood) do |f| %>
-  <% if @control_mood.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@control_mood.errors.count, "error") %> prohibited this control_mood from being saved:</h2>
+<%= form_for(@control_mood, html: {class: 'ls-form row'}) do |f| %>
+<% if @control_mood.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@control_mood.errors.count, "error") %> prohibited this control_mood from being saved:</h2>
 
-      <ul>
-      <% @control_mood.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <ul>
+    <% @control_mood.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<fieldset>
+
+
+  <label class="ls-label col-md-8">
+    <span class="ls-label-text">Time</span>
+    <div class="ls-custom-select">
+      <%= f.collection_select(:team_id, Team.all, :id, :name, class: "ls-state ls-select") %>
     </div>
+  </label>
+
+  <label class="ls-label col-md-8 ls-clear-both">
+    <span class="ls-label-text">Onde voce esta</span>
+    <%= f.text_field :work %>
+  </label>
+
+  <% Mood.all.each do |m| %>
+    <label class="ls-label-text col-md-4">
+      <%= image_tag(m.image, class: 'ls-v-align-middle') %>
+      <input type="radio" name="control_mood[mood_id]" value="<%= m.id %>">
+      <%= m.kind %>
+    </label>
   <% end %>
 
-  <fieldset>
 
-    <div class="row">
-      <div class="col-md-8">
-        <label class="ls-label col-md-4">
-        <span class="ls-label-text"><%= f.label :team_id, "Time" %></span>
-          <div class="ls-custom-select">
-            <%= f.collection_select(:team_id, Team.all, :id, :kind, class: "ls-state ls-select") %>
-          </div>
-        </label>
-      </div>
-    </div>
+</fieldset>
 
-    <div class="row">
-      <div class="col-md-8">
-        <label class="ls-label col-md-4">
-        <span class="ls-label-text"><%= f.label :mood_id, "Humor" %></span>
-          <div class="ls-custom-select">
-            <%= f.collection_select(:mood_id, Mood.all, :id, :kind, class: "ls-state ls-select") %>
-          </div>
-        </label>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-8">
-        <label class="ls-label col-md-6">
-        <span class="ls-label-text"><%= f.label :work, "Trabalho" %></span>
-        <%= f.text_field :work %>
-      </label>
-     </div>
-    </div>
-
-
- </fieldset>
-
-  <div class="ls-actions-btn">
-      <%= f.button  "Salvar", :type => "submit" , class: "ls-btn-primary"%>
-      <%= f.submit "Limpar", :type => "reset",  class: "ls-btn-primary" %>
-      <%= link_to 'Voltar', control_moods_path, class: "ls-btn-darker" %>
-  </div>
+<div class="ls-actions-btn">
+  <%= f.submit  "Salvar", :type => "submit" , class: "ls-btn-primary"%>
+  <%= f.submit "Limpar", :type => "reset",  class: "ls-btn-primary" %>
+  <%= link_to 'Voltar', control_moods_path, class: "ls-btn-darker" %>
+</div>
 
 <% end %>
 

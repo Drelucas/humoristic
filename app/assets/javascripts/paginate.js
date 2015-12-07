@@ -4,17 +4,17 @@ mood.paginate = (function() {
   'use script';
 
   function init() {
-    $("#per_page_options").on({change: changePerPage});
+    $('#per_page_options').on({change: changePerPage});
   }
 
   function changePerPage() {
     var target = $(this).data('target');
-    var form   = $("form");
+    var form   = $('form');
 
     if (target !== undefined)
       form = $(target)
 
-    $("#per_page").val($(this).val());
+    $('#per_page').val($(this).val());
     form.submit();
   }
 
@@ -23,4 +23,4 @@ mood.paginate = (function() {
   }
 }());
 
-mood.paginate.init();
+$(document).ready(mood.paginate.init)

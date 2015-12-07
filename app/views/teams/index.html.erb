@@ -49,17 +49,13 @@
   <%= paginate @teams if @teams %>
 
   <% if not @teams.blank? %>
-  <div class="ls-filter-view">
-    <%= t 'helpers.show' %>
-    <div class="ls-custom-select">
-      <%= select_tag(:per_page_options, options_for_select(options_for_per_page, params[:per_page]))%>
+    <div class="ls-filter-view">
+      <%= t 'helpers.show' %>
+      <div class="ls-custom-select">
+        <%= select_tag(:per_page_options, options_for_select(options_for_per_page, params[:per_page]))%>
+      </div>
+      <%= t 'helpers.per_page' %>
     </div>
-    <%= t 'helpers.per_page' %>
-  </div>
   <% end %>
 </div>
-<% end %>
-
-<%= content_for :javascript do %>
-  $(document).ready(mood.paginate.init);
 <% end %>

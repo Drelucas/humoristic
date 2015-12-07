@@ -1,16 +1,24 @@
+
 <aside class="ls-sidebar">
-  <nav class="ls-menu">
-    <ul>
-    <li><%= link_to 'Como está se sentindo?', control_moods_path, class: "ls-ico-star" %></li>
-      <li class="ls-submenu">
-        <a class="ls-ico-edit-admin" href="">  Cadastros </a>
+
+  <div class="ls-sidebar-inner">
+    <a href="/locawebstyle/documentacao/exemplos//pre-painel"  class="ls-go-prev"><span class="ls-text">Voltar à lista de serviços</span></a>
+
+    <nav class="ls-menu">
+      <ul>
+        <li><%= link_to 'Como está se sentindo?', control_moods_path, class: "ls-ico-star" %></li>
+        <li class="ls-submenu">
+          <a class="ls-ico-edit-admin" href="">  Cadastros </a>
           <ul>
             <li><%= link_to 'Time', teams_path, class: "ls-ico-users" %></li>
           </ul>
           <ul>
             <li><%= link_to 'Humor', moods_path, class: "ls-ico-star" %></li>
           </ul>
-      </li>
-    </ul>
-  </nav>
+        </li>
+      </ul>
+    </nav>
+
+
+  </div>
 </aside>

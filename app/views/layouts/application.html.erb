@@ -7,14 +7,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
   <%= stylesheet_link_tag "application", SECRETS["locastyle"]["css"], :media => "screen" %>
   <%= csrf_meta_tags %>
-  <%= javascript_include_tag "application" %>
 </head>
 <body>
   <div class="ls-topbar">
     <div class="ls-notification-topbar">
+
+    <div class="ls-alerts-list ls-display-none">
+      <a href="#" class="ls-ico-bell-o" data-counter="8" data-ls-module="topbarCurtain" data-target="#ls-notification-curtain"><span>Notificações</span></a>
+      <a href="#" class="ls-ico-bullhorn" data-ls-module="topbarCurtain" data-target="#ls-help-curtain"><span>Ajuda</span></a>
+      <a href="#" class="ls-ico-question" data-ls-module="topbarCurtain" data-target="#ls-feedback-curtain"><span>Sugestões</span></a>
+    </div>
+
       <div data-ls-module="dropdown" class="ls-dropdown ls-user-account">
         <a href="#" class="ls-ico-user">
-          <img src="http://www.gravatar.com/avatar/<%= Digest::MD5.hexdigest(current_user.email.try(:downcase)) if current_user %>?d=mm&s=32">
+          <img src="http://www.gravatar.com/avatar/<%= Digest::MD5.hexdigest(current_user.email.try(:downcase)) if current_user %>?d=mm&amp;s=32">
           <span class="ls-name"><%= current_user.name if current_user %></span>
         </a>
         <nav class="ls-dropdown-nav ls-user-menu" aria-hidden="false">
@@ -25,12 +31,10 @@
       </div>
     </div>
     <span class="ls-show-sidebar ls-ico-menu"></span>
-    <h1 class="ls-brand-name"><a class="ls-ico-history" href="/"><%= link_to SECRETS["site"]["name"], root_path, title: SECRETS["site"]["name"] %></h1>
+    <h1 class="ls-brand-name"><%= link_to SECRETS["site"]["name"], root_path, title: SECRETS["site"]["name"], class: "ls-ico-history" %></h1>
   </div>
   <main class="ls-main ">
     <div class="container-fluid">
-      </p>  
-      <%= flash_messages %>
       <%= yield %>
     </div>
   </main>

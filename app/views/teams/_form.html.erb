@@ -1,3 +1,4 @@
+<%= flash_messages %>
 <%= form_for(@team, html: { class: "ls-form row" }) do |f| %>
 <% if @team.errors.any? %>
 <div id="error_explanation">
@@ -32,9 +33,6 @@
          multiple: true, class: 'select2 col-md-12'
          ) %>
 
-      <script type="text/javascript">
-        $('#team_user_id').select2();
-      </script>
        </label>
 
    </div>
@@ -43,7 +41,7 @@
 </fieldset>
 
 <div class="ls-actions-btn">
-  <%= f.button  "Salvar", :type => "submit" , class: "ls-btn-primary"%>
+  <%= f.submit  "Salvar", :type => "submit" , class: "ls-btn-primary"%>
   <%= f.submit "Limpar", :type => "reset",  class: "ls-btn-primary" %>
   <%= link_to 'Voltar', teams_path, class: "ls-btn-darker" %>
 </div>

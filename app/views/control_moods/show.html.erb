@@ -1,14 +1,30 @@
 <h1 class="ls-title-intro ls-ico-text">Humor</h1>
-
+<%= flash_messages %>
 <div class="ls-box">
   <div class="row">
     <div class="col-md-12">
-        <table class="ls-table ls-table-striped ls-no-hover ls-sm-space ls-no-margin-top">
-          <tbody>
-            <tr> <td> Humor: <label class="ls-title-6"><%= @control_mood.mood.kind %></label> </td> </tr>
-            <tr> <td> Trabalho: <label class="ls-title-6"><%= @control_mood.work %></label> </td> </tr>
-          </tbody>
-        </table>
+      <table class="ls-table ls-table-striped ls-no-hover ls-sm-space ls-no-margin-top">
+        <tbody>
+          <tr>
+            <td>
+              Criado em:
+              <label class="ls-title-6"><%= @control_mood.mood.updated_at %></label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Humor:
+              <label class="ls-title-6"><%= @control_mood.mood.kind %> <%= image_tag(@control_mood.mood.image, class: 'ls-v-align-middle') %></label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Trabalho:
+              <label class="ls-title-6"><%= @control_mood.work %></label>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
