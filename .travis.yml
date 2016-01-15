@@ -3,4 +3,4 @@ rvm:
   - 2.2.2
 
 #script: bundle exec rspec
-bundler_args: "--without play"
+#bundler_args: "--without play"
