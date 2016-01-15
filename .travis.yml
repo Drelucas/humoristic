@@ -3,5 +3,5 @@ rvm:
   - 2.2.2
 
 sudo: false
-script: bundle exec rspec
+#script: bundle exec rspec
 bundler_args: "--without play"
