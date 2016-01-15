@@ -14,6 +14,9 @@ gem 'will_paginate', '~> 3.0.6'
 
 group :development, :test do
   gem 'pry'
+  gem 'rspec', '~> 3.2.0'
+  gem 'rubocop', require: false
+  gem 'overcommit', require: false
 end
 
 group :development do
